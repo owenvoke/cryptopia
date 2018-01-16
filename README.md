@@ -28,7 +28,7 @@ $ composer require pxgamer/cryptopia
 ## Usage
 
 ```php
-$basic = new pxgamer\BTGExp\Basic();
+$basic = new pxgamer\Cryptopia\Public();
 ```
 
 ## Change log
