@@ -4,7 +4,8 @@
     "description": "An API wrapper for Cryptopia.co.nz",
     "license": "MIT",
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.4",
@@ -26,4 +27,3 @@
         "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
     }
 }
-
