@@ -32,7 +32,7 @@ $ composer require pxgamer/cryptopia
 Initialise the `Basic` class.
 
 ```php
-$basic = new pxgamer\Cryptopia\Public();
+$basic = new pxgamer\Cryptopia\Basic();
 ```
 
 Retrieve a list of currencies as an `array`.
