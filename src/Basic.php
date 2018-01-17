@@ -27,4 +27,20 @@ class Basic
             'base_uri' => self::BASE_URI,
         ]);
     }
+
+    public function getCurrencies()
+    {
+        $response = \GuzzleHttp\json_decode(
+            $this->client
+                ->get('getcurrencies')
+                ->getBody()
+                ->getContents()
+        );
+
+        if ($response->Success) {
+            return $response->Data;
+        }
+
+        return null;
+    }
 }
