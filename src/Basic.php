@@ -107,4 +107,20 @@ class Basic
 
         return null;
     }
+
+    public function getMarketOrders(int $market = 1261, int $orderCount = 100)
+    {
+        $response = \GuzzleHttp\json_decode(
+            $this->client
+                ->get('getmarketorders/'.$market.'/'.$orderCount)
+                ->getBody()
+                ->getContents()
+        );
+
+        if ($response->Success) {
+            return $response->Data;
+        }
+
+        return null;
+    }
 }
