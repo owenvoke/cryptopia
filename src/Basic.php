@@ -91,4 +91,20 @@ class Basic
 
         return null;
     }
+
+    public function getMarketHistory(int $market = 1261, int $hours = 24)
+    {
+        $response = \GuzzleHttp\json_decode(
+            $this->client
+                ->get('getmarkethistory/'.$market.'/'.$hours)
+                ->getBody()
+                ->getContents()
+        );
+
+        if ($response->Success) {
+            return $response->Data;
+        }
+
+        return null;
+    }
 }
