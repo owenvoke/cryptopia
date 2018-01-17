@@ -123,4 +123,20 @@ class Basic
 
         return null;
     }
+
+    public function getMarketOrderGroups(string $markets = '1261', int $orderCount = 100)
+    {
+        $response = \GuzzleHttp\json_decode(
+            $this->client
+                ->get('getmarketordergroups/'.$markets.'/'.$orderCount)
+                ->getBody()
+                ->getContents()
+        );
+
+        if ($response->Success) {
+            return $response->Data;
+        }
+
+        return null;
+    }
 }
