@@ -27,8 +27,54 @@ $ composer require pxgamer/cryptopia
 
 ## Usage
 
+### Basic methods
+
+Initialise the `Basic` class.
+
 ```php
 $basic = new pxgamer\Cryptopia\Public();
+```
+
+Retrieve a list of currencies as an `array`.
+
+```php
+$basic->getCurrencies();
+```
+
+Retrieve a list of trade pairs as an `array`.
+
+```php
+$basic->getTradePairs();
+```
+
+Retrieve a list of markets as an `array`.
+
+```php
+$basic->getMarkets();
+```
+
+Retrieve a single market as a `stdClass`.
+
+```php
+$basic->getMarket();
+```
+
+Retrieve a single market's history as an `array`.
+
+```php
+$basic->getMarketHistory();
+```
+
+Retrieve a single market's orders as a `stdClass`.
+
+```php
+$basic->getMarketOrders();
+```
+
+Retrieve a list of market order groups as an `array`.
+
+```php
+$basic->getMarketOrderGroups();
 ```
 
 ## Change log
