@@ -43,4 +43,20 @@ class Basic
 
         return null;
     }
+
+    public function getTradePairs()
+    {
+        $response = \GuzzleHttp\json_decode(
+            $this->client
+                ->get('gettradepairs')
+                ->getBody()
+                ->getContents()
+        );
+
+        if ($response->Success) {
+            return $response->Data;
+        }
+
+        return null;
+    }
 }
