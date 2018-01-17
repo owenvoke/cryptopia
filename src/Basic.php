@@ -59,4 +59,20 @@ class Basic
 
         return null;
     }
+
+    public function getMarkets(string $baseMarket = '', int $hours = 24)
+    {
+        $response = \GuzzleHttp\json_decode(
+            $this->client
+                ->get('getmarkets/'.$baseMarket.'/'.$hours)
+                ->getBody()
+                ->getContents()
+        );
+
+        if ($response->Success) {
+            return $response->Data;
+        }
+
+        return null;
+    }
 }
